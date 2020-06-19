@@ -26,10 +26,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
+SECURE_SSL_REDIRECT = True
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ["aprilandpedro.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["www.aprilandpedro.com", "aprilandpedro.com",
+                 "localhost", "127.0.0.1", "174.138.39.31"]
 
 
 # Application definition
