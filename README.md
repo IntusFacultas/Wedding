@@ -1,4 +1,4 @@
-# hello-world
+# April and Pedro's Wedding
 
 ## Project setup
 ```
