@@ -1,4 +1,3 @@
-export const THEME = {};
-export const COLOR_THEME = {
-  WeddingGray: "#707070",
+export const THEME = {
+  WeddingGray: { color: "#707070" },
 };

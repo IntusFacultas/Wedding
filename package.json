@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "wedding",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@IntusFacultas/card": "^2.0.9",
+    "@IntusFacultas/typography": "^2.1.6",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "smooth-scrollbar": "^8.5.2",
     "vue": "^2.6.11",
     "vue-styled-components": "^1.5.1"
   },
