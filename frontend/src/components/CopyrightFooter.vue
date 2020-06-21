@@ -22,7 +22,7 @@ const FooterContainer = styled("footer")`
   left: 0;
   border-top: 1px solid #707070;
   right: 0;
-  padding: 0 2em;
+  padding: 0.5em 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
