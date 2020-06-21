@@ -28,8 +28,6 @@ const FooterContainer = styled("footer")`
   justify-content: center;
 `;
 const FooterLine = styled("section")`
-  padding: 0.5em 0;
-  //   display: flex;
   display: block;
   & > span:first-child {
     margin-right: 5px;

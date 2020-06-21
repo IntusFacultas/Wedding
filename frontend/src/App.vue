@@ -44,7 +44,7 @@ html {
   font-family: Montserrat;
 }
 .router-view {
-  padding-bottom: 100px;
+  padding-bottom: 117px;
 }
 h1,
 h2,
