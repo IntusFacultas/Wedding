@@ -1,11 +1,15 @@
 <template>
   <theme-provider id="app" :theme="theme">
-    <LandingPage></LandingPage>
+    <div class="router-view">
+      <LandingPage></LandingPage>
+    </div>
+    <CopyrightFooter></CopyrightFooter>
   </theme-provider>
 </template>
 
 <script>
 import LandingPage from "./views/LandingPage";
+import CopyrightFooter from "./components/CopyrightFooter";
 import { ThemeProvider } from "vue-styled-components";
 import Scrollbar from "smooth-scrollbar";
 import { THEME } from "./configuration";
@@ -13,7 +17,7 @@ export default {
   name: "App",
   data() {
     return {
-      theme: THEME,
+      theme: THEME
     };
   },
   mounted() {
@@ -22,7 +26,8 @@ export default {
   components: {
     LandingPage,
     ThemeProvider,
-  },
+    CopyrightFooter
+  }
 };
 </script>
 
@@ -37,6 +42,9 @@ html {
 }
 #app * {
   font-family: Montserrat;
+}
+.router-view {
+  padding-bottom: 100px;
 }
 h1,
 h2,

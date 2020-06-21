@@ -3,32 +3,18 @@
     <n-card class="landing-modal-container">
       <template v-slot:body>
         <div class="landing-modal">
-          <img
-            class="wedding-logo"
-            :src="`${STATIC_URL}${logo}`"
-            alt="April and Pedro's initials"
-          />
-          <page-title class="landing-modal-title" flavor="WeddingGray"
-            >SAVE THE DATE</page-title
-          >
-          <custom-announcement class="secondary-title"
-            >We're getting married!</custom-announcement
-          >
-          <custom-announcement>
-            June 12th 2021
-          </custom-announcement>
+          <img class="wedding-logo" :src="`${STATIC_URL}${logo}`" alt="April and Pedro's initials" />
+          <page-title class="landing-modal-title">SAVE THE DATE</page-title>
+          <custom-announcement class="secondary-title">We're getting married!</custom-announcement>
+          <custom-announcement>June 12th 2021</custom-announcement>
           <custom-announcement>
             <web-link
               class="custom-link"
               href="https://www.thecarnegiecenter.org/"
-              >The Carnegie Center of Columbia Tusculum
-            </web-link>
-            <br />
-            Cincinnati, Ohio
+            >The Carnegie Center of Columbia Tusculum</web-link>
+            <br />Cincinnati, Ohio
           </custom-announcement>
-          <small-text class="patience-line">
-            (Check back later, Website being built)
-          </small-text>
+          <small-text class="patience-line">(Check back later, Website being built)</small-text>
         </div>
       </template>
     </n-card>
@@ -42,11 +28,11 @@ import background from "../assets/Wedding Background Optimized.svg";
 import Logo from "../assets/Wedding Logo.svg";
 import { PageTitle, WebLink, SmallText } from "@IntusFacultas/typography";
 const props = {
-  svg: String,
+  svg: String
 };
 const CustomAnnouncement = styled("p")`
   font-family: "Montserrat";
-  color: #707070;
+  color: #444;
   margin-block-start: 16px;
   margin-block-end: 0;
   font-size: 20px;
@@ -57,7 +43,7 @@ const LandingPageBackground = styled("div", props)`
   align-items: center;
   overflow: hidden;
   text-align:center;
-  background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
+  background-image: url("${process.env.VUE_APP_STATIC_URL}${props =>
   props.svg}");
   background-size: 3000px;
   background-position: center;
@@ -73,16 +59,16 @@ export const LandingPage = {
     PageTitle,
     CustomAnnouncement,
     WebLink,
-    SmallText,
+    SmallText
   },
   data() {
     return {
       svg: background,
       logo: Logo,
-      STATIC_URL: process.env.VUE_APP_STATIC_URL,
+      STATIC_URL: process.env.VUE_APP_STATIC_URL
     };
   },
-  mounted() {},
+  mounted() {}
 };
 export default LandingPage;
 </script>
@@ -98,13 +84,12 @@ export default LandingPage;
   font-size: 25px;
 }
 .patience-line {
-  margin-top: 16px;
+  margin-top: 16px !important;
 }
 .landing-modal-container {
   min-width: 350px;
   width: 50%;
   max-width: 840px;
-  margin: 100px 0;
 }
 .landing-modal-container > div {
   box-shadow: 0px 5px 5px #aeaeae;
@@ -126,9 +111,6 @@ export default LandingPage;
   color: #344966;
 }
 @media screen and (max-width: 490px) {
-  .landing-modal-container {
-    margin-top: 500px;
-  }
   .landing-modal {
     padding: 25px;
   }
