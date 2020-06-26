@@ -1,0 +1,229 @@
+<template>
+  <main class="mainpage">
+    <Navbar></Navbar>
+    <background-image
+      :img="picture2"
+      height="80vh"
+      :positioning="picture2Formatting"
+    >
+      <page-title class="backgroundimage__title" flavor="White">
+        April
+        <span class="backgroundimage__ampersand">&amp;</span> Pedro
+      </page-title>
+      <paragraph class="backgroundimage__subtext" flavor="White"
+        >June 12th, 20201 &sdot; Cincinnati, Ohio</paragraph
+      >
+      <div>
+        <ScrollIndicator
+          class="backgroundimage__scrollindicator"
+          flavor="White"
+          textFlavor="White"
+          :theme="theme"
+        ></ScrollIndicator>
+
+        <paragraph flavor="White">Scroll</paragraph>
+      </div>
+    </background-image>
+    <content-section>
+      <OurStory></OurStory>
+    </content-section>
+    <background-image
+      id="details"
+      :img="picture1"
+      height="80vh"
+      :positioning="picture1Formatting"
+    >
+      <page-title class="backgroundimage__title" flavor="White"
+        >Details</page-title
+      >
+    </background-image>
+    <content-section>
+      <ul class="detailsnavigation">
+        <li>
+          <a href="#travel">Travel</a>
+        </li>
+        <li>Accomodation</li>
+        <li>Schedule</li>
+        <li>Menu</li>
+        <li>Dress Code</li>
+        <li>Wedding Party</li>
+      </ul>
+      <Travel></Travel>
+    </content-section>
+    <CopyrightFooter></CopyrightFooter>
+  </main>
+</template>
+
+<script>
+import Navbar from "../components/Navbar";
+import CopyrightFooter from "../components/CopyrightFooter";
+import ScrollIndicator from "../components/ScrollIndicator";
+import styled from "vue-styled-components";
+import picture1 from "../assets/picture1.png";
+import picture2 from "../assets/picture2.png";
+import OurStory from "../components/OurStory";
+import Travel from "../components/Travel";
+import { PageTitle, Paragraph } from "@IntusFacultas/typography";
+import VSWoff from "../assets/VladimirScript.woff";
+import VSWoff2 from "../assets/VladimirScript.woff2";
+import { THEME } from "../configuration";
+const props = {
+  img: String,
+  height: String,
+  positioning: String,
+};
+const BackgroundImage = styled("div", props)`
+    background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
+  props.img}");
+  height: ${(props) => props.height};
+  ${(props) => props.positioning}
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position:relative;
+  background-color: #444;
+  display:flex;
+  padding: 0 1em;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  @font-face {
+        font-family: 'Vladimir Script';
+        src: url('${process.env.VUE_APP_STATIC_URL}${VSWoff}') format('woff2'),
+            url('${process.env.VUE_APP_STATIC_URL}${VSWoff2}') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+  }
+`;
+const ContentSection = styled.div`
+  background-color: white;
+  padding: 2em 2em;
+`;
+export const MainPage = {
+  components: {
+    PageTitle,
+    Paragraph,
+    BackgroundImage,
+    CopyrightFooter,
+    ScrollIndicator,
+    ContentSection,
+    Travel,
+    OurStory,
+    Navbar,
+  },
+  data() {
+    return {
+      theme: THEME,
+      picture1,
+      picture1Formatting: `
+        background-position: center center;
+        @media screen and (min-width: 1700px) {
+          background-position: center -200px;
+        }
+        @media screen and (min-width: 1820px) {
+          background-position: center -250px;
+        }
+        @media screen and (min-width: 1900px) {
+          background-position: center -280px;
+        }
+        @media screen and (min-width: 2100px) {
+          background-position: center -310px;
+        }
+      `,
+      picture2,
+      picture2Formatting: `
+        background-position:center -165px;
+        @media screen and (min-width: 2030px) {
+            background-position:center -380px;
+        }
+        @media screen and (max-width: 800px ) {
+          background-position: 40% -165px;
+        }
+        @media screen and (max-width: 670px ) {
+          background-position: 30% -165px;
+        }
+        @media screen and (max-width: 450px) {
+            background-position: 40% -105px;
+        }
+      `,
+      STATIC_URL: process.env.VUE_APP_STATIC_URL,
+    };
+  },
+};
+export default MainPage;
+</script>
+
+<style>
+.backgroundimage__title {
+  font-size: 50px;
+  text-shadow: 2px 2px #000;
+  text-align: center;
+}
+.mainpage {
+  display: block;
+  height: 200vh;
+}
+
+.backgroundimage__ampersand {
+  font-family: "Vladimir Script" !important;
+  font-size: 90px;
+}
+.backgroundimage__subtext {
+  font-size: 19px;
+  text-shadow: 2px 2px #000;
+}
+.backgroundimage__scrollindicator {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+}
+
+.detailsnavigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #444;
+}
+.detailsnavigation li {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.5em 2em;
+}
+.detailsnavigation li > a {
+  text-decoration: none;
+  color: #444;
+}
+.detailsnavigation li > a:visited {
+  color: #444;
+}
+.detailsnavigation li > a:hover {
+  color: #444;
+}
+.detailsnavigation li:after {
+  transition: all 0.25s;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 0%;
+  padding-top: 2.5px;
+  border-bottom: 2px solid #444;
+}
+
+.detailsnavigation li:hover::after {
+  transition: all 0.25s;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 2.5px;
+  border-bottom: 2px solid #444;
+}
+
+@media screen and (max-width: 990px) {
+  .ourstory__paragraphs {
+    border-left: 0px solid white;
+  }
+}
+</style>

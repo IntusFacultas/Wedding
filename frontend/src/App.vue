@@ -1,33 +1,27 @@
 <template>
   <theme-provider id="app" :theme="theme">
-    <div class="router-view">
-      <LandingPage></LandingPage>
-    </div>
-    <CopyrightFooter></CopyrightFooter>
+    <MainPage></MainPage>
   </theme-provider>
 </template>
 
 <script>
-import LandingPage from "./views/LandingPage";
-import CopyrightFooter from "./components/CopyrightFooter";
+// import LandingPage from "./views/LandingPage";
+import MainPage from "./views/MainPage";
+
 import { ThemeProvider } from "vue-styled-components";
-import Scrollbar from "smooth-scrollbar";
 import { THEME } from "./configuration";
 export default {
   name: "App",
   data() {
     return {
-      theme: THEME
+      theme: THEME,
     };
   },
-  mounted() {
-    Scrollbar.init(document.querySelector("#app"));
-  },
+  mounted() {},
   components: {
-    LandingPage,
+    MainPage,
     ThemeProvider,
-    CopyrightFooter
-  }
+  },
 };
 </script>
 
@@ -36,6 +30,7 @@ body,
 html {
   margin: 0;
   height: 100%;
+  scroll-behavior: smooth !important;
 }
 #app {
   height: 100%;
@@ -55,5 +50,24 @@ h6 {
   font-family: "Trajan Pro 3" !important ;
   margin-block-end: 0;
   margin-bottom: 0 !important;
+}
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6c757d white;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border-radius: 5px;
+  border: 3px solid white;
 }
 </style>

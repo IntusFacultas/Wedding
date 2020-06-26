@@ -8,6 +8,10 @@
       <text-content>Photography &copy; Copyright &nbsp;</text-content>
       <text-content>Larrison Photography</text-content>
     </footer-line>
+    <footer-line>
+      <text-content>Photography &copy; Copyright &nbsp;</text-content>
+      <text-content>Ace Clyne</text-content>
+    </footer-line>
   </footer-container>
 </template>
 
@@ -16,8 +20,8 @@ import styled from "vue-styled-components";
 import { TextContent } from "@IntusFacultas/typography";
 const FooterContainer = styled("footer")`
   background-color: white;
-  height: 100px;
-  position: absolute;
+  height: 130px;
+  // position: absolute;
   bottom: 0;
   left: 0;
   border-top: 1px solid #707070;
