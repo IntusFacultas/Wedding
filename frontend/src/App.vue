@@ -14,14 +14,14 @@ export default {
   name: "App",
   data() {
     return {
-      theme: THEME,
+      theme: THEME
     };
   },
   mounted() {},
   components: {
     MainPage,
-    ThemeProvider,
-  },
+    ThemeProvider
+  }
 };
 </script>
 

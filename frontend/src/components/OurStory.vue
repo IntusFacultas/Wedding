@@ -113,6 +113,9 @@ export default OurStory;
 @media screen and (max-width: 990px) {
   .ourstory__paragraphs {
     border-left: 0px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

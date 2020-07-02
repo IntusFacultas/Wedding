@@ -5,9 +5,14 @@ pushd .
 cd dist/js
 find . -regex '.*/chunk.+\.js' -exec mv {} vendor.js \;
 find . -regex '.*/app.+\.js' -exec mv {} app.js \;
+gzip -9 vendor.js
+gzip -9 app.js
 
 cd ../css
+find . -regex '.*/chunk.+\.css' -exec mv {} vendor.css \;
 find . -regex '.*/app.+\.css' -exec mv {} app.css \;
+gzip -9 vendor.css
+gzip -9 app.css
 
 popd
 

@@ -56,9 +56,7 @@ export const ScrollIndicator = {
       textTheme: TextTheme,
     };
   },
-  mounted() {
-    console.log(this.theme);
-  },
+  mounted() {},
   props: {
     textFlavor: {
       type: String,

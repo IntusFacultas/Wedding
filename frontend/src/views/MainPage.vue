@@ -1,41 +1,27 @@
 <template>
   <main class="mainpage">
     <Navbar></Navbar>
-    <background-image
-      :img="picture2"
-      height="80vh"
-      :positioning="picture2Formatting"
-    >
+    <background-image :img="picture2" height="80vh" :positioning="picture2Formatting">
       <page-title class="backgroundimage__title" flavor="White">
         April
         <span class="backgroundimage__ampersand">&amp;</span> Pedro
       </page-title>
-      <paragraph class="backgroundimage__subtext" flavor="White"
-        >June 12th, 20201 &sdot; Cincinnati, Ohio</paragraph
-      >
-      <div>
-        <ScrollIndicator
-          class="backgroundimage__scrollindicator"
-          flavor="White"
-          textFlavor="White"
-          :theme="theme"
-        ></ScrollIndicator>
-
-        <paragraph flavor="White">Scroll</paragraph>
-      </div>
+      <paragraph
+        class="backgroundimage__subtext"
+        flavor="White"
+      >June 12th, 2021 &bull; Cincinnati, Ohio</paragraph>
+      <ScrollIndicator
+        class="backgroundimage__scrollindicator"
+        flavor="White"
+        textFlavor="White"
+        :theme="theme"
+      ></ScrollIndicator>
     </background-image>
     <content-section>
       <OurStory></OurStory>
     </content-section>
-    <background-image
-      id="details"
-      :img="picture1"
-      height="80vh"
-      :positioning="picture1Formatting"
-    >
-      <page-title class="backgroundimage__title" flavor="White"
-        >Details</page-title
-      >
+    <background-image id="details" :img="picture1" height="80vh" :positioning="picture1Formatting">
+      <page-title class="backgroundimage__title" flavor="White">Details</page-title>
     </background-image>
     <content-section>
       <ul class="detailsnavigation">
@@ -43,12 +29,15 @@
           <a href="#travel">Travel</a>
         </li>
         <li>Accomodation</li>
-        <li>Schedule</li>
+        <li>
+          <a href="#schedule">Schedule</a>
+        </li>
         <li>Menu</li>
         <li>Dress Code</li>
         <li>Wedding Party</li>
       </ul>
       <Travel></Travel>
+      <Schedule></Schedule>
     </content-section>
     <CopyrightFooter></CopyrightFooter>
   </main>
@@ -63,6 +52,7 @@ import picture1 from "../assets/picture1.png";
 import picture2 from "../assets/picture2.png";
 import OurStory from "../components/OurStory";
 import Travel from "../components/Travel";
+import Schedule from "../components/Schedule";
 import { PageTitle, Paragraph } from "@IntusFacultas/typography";
 import VSWoff from "../assets/VladimirScript.woff";
 import VSWoff2 from "../assets/VladimirScript.woff2";
@@ -70,16 +60,16 @@ import { THEME } from "../configuration";
 const props = {
   img: String,
   height: String,
-  positioning: String,
+  positioning: String
 };
 const BackgroundImage = styled("div", props)`
-    background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
+    background-image: url("${process.env.VUE_APP_STATIC_URL}${props =>
   props.img}");
-  height: ${(props) => props.height};
-  ${(props) => props.positioning}
+  height: ${props => props.height};
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  ${props => props.positioning}
   position:relative;
   background-color: #444;
   display:flex;
@@ -98,7 +88,13 @@ const BackgroundImage = styled("div", props)`
 `;
 const ContentSection = styled.div`
   background-color: white;
-  padding: 2em 2em;
+  padding: 1em 2em;
+  @media screen and (max-width: 450px) {
+    text-align: center;
+    & * {
+      text-align: center;
+    }
+  }
 `;
 export const MainPage = {
   components: {
@@ -111,6 +107,7 @@ export const MainPage = {
     Travel,
     OurStory,
     Navbar,
+    Schedule
   },
   data() {
     return {
@@ -130,6 +127,10 @@ export const MainPage = {
         @media screen and (min-width: 2100px) {
           background-position: center -310px;
         }
+        @media screen and (max-width: 450px) {
+            background-position: 40% center;
+            background-attachment: scroll;
+        }
       `,
       picture2,
       picture2Formatting: `
@@ -144,12 +145,13 @@ export const MainPage = {
           background-position: 30% -165px;
         }
         @media screen and (max-width: 450px) {
-            background-position: 40% -105px;
+            background-position: 40% center;
+            background-attachment: scroll;
         }
       `,
-      STATIC_URL: process.env.VUE_APP_STATIC_URL,
+      STATIC_URL: process.env.VUE_APP_STATIC_URL
     };
-  },
+  }
 };
 export default MainPage;
 </script>
@@ -177,17 +179,27 @@ export default MainPage;
   position: absolute;
   bottom: 15px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .detailsnavigation {
   display: flex;
   justify-content: center;
   list-style: none;
+  padding-left: 0px;
   flex-wrap: wrap;
   border-bottom: 2px solid #444;
 }
+@media screen and (max-width: 450px) {
+  .detailsnavigation {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .detailsnavigation li {
   cursor: pointer;
+
   font-size: 18px;
   padding: 0.5em 2em;
 }
