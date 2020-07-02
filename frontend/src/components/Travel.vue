@@ -92,7 +92,11 @@ export default Travel;
 }
 .detailssection__map {
   margin: 5px 0;
-  min-width: 300px;
-  max-width: 450px;
+  width: 450px;
+}
+@media screen and (max-width: 450px) {
+  .detailssection__map {
+    width: 300px;
+  }
 }
 </style>
