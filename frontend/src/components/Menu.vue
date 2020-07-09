@@ -47,12 +47,12 @@
             class="menusection__item__img"
           />
           <div>
-            <category-title
-              >Spicy Tuna Tartar on Guacamole Toast</category-title
-            >
-            <paragraph class="menusection__subtext" :size="14"
-              >with Guasacaca</paragraph
-            >
+            <category-title>
+              Spicy Tuna Tartar on Guacamole Toast
+            </category-title>
+            <paragraph class="menusection__subtext" :size="14">
+              with Guasacaca
+            </paragraph>
           </div>
         </div>
       </div>
