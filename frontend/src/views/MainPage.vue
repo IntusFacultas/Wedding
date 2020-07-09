@@ -1,15 +1,18 @@
 <template>
   <main class="mainpage">
     <Navbar></Navbar>
-    <background-image :img="picture2" height="80vh" :positioning="picture2Formatting">
+    <background-image
+      :img="picture2"
+      height="80vh"
+      :positioning="picture2Formatting"
+    >
       <page-title class="backgroundimage__title" flavor="White">
         April
         <span class="backgroundimage__ampersand">&amp;</span> Pedro
       </page-title>
-      <paragraph
-        class="backgroundimage__subtext"
-        flavor="White"
-      >June 12th, 2021 &bull; Cincinnati, Ohio</paragraph>
+      <paragraph class="backgroundimage__subtext" flavor="White"
+        >June 12th, 2021 &bull; Cincinnati, Ohio</paragraph
+      >
       <ScrollIndicator
         class="backgroundimage__scrollindicator"
         flavor="White"
@@ -20,8 +23,15 @@
     <content-section>
       <OurStory></OurStory>
     </content-section>
-    <background-image id="details" :img="picture1" height="80vh" :positioning="picture1Formatting">
-      <page-title class="backgroundimage__title" flavor="White">Details</page-title>
+    <background-image
+      id="details"
+      :img="picture1"
+      height="80vh"
+      :positioning="picture1Formatting"
+    >
+      <page-title class="backgroundimage__title" flavor="White"
+        >Details</page-title
+      >
     </background-image>
     <content-section>
       <ul class="detailsnavigation">
@@ -32,12 +42,15 @@
         <li>
           <a href="#schedule">Schedule</a>
         </li>
-        <li>Menu</li>
+        <li>
+          <a href="#menu">Menu</a>
+        </li>
         <li>Dress Code</li>
         <li>Wedding Party</li>
       </ul>
       <Travel></Travel>
       <Schedule></Schedule>
+      <Menu></Menu>
     </content-section>
     <CopyrightFooter></CopyrightFooter>
   </main>
@@ -53,6 +66,7 @@ import picture2 from "../assets/picture2.png";
 import OurStory from "../components/OurStory";
 import Travel from "../components/Travel";
 import Schedule from "../components/Schedule";
+import Menu from "../components/Menu";
 import { PageTitle, Paragraph } from "@IntusFacultas/typography";
 import VSWoff from "../assets/VladimirScript.woff";
 import VSWoff2 from "../assets/VladimirScript.woff2";
@@ -60,16 +74,16 @@ import { THEME } from "../configuration";
 const props = {
   img: String,
   height: String,
-  positioning: String
+  positioning: String,
 };
 const BackgroundImage = styled("div", props)`
-    background-image: url("${process.env.VUE_APP_STATIC_URL}${props =>
+    background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
   props.img}");
-  height: ${props => props.height};
+  height: ${(props) => props.height};
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  ${props => props.positioning}
+  ${(props) => props.positioning}
   position:relative;
   background-color: #444;
   display:flex;
@@ -105,9 +119,10 @@ export const MainPage = {
     ScrollIndicator,
     ContentSection,
     Travel,
+    Menu,
     OurStory,
     Navbar,
-    Schedule
+    Schedule,
   },
   data() {
     return {
@@ -149,9 +164,9 @@ export const MainPage = {
             background-attachment: scroll;
         }
       `,
-      STATIC_URL: process.env.VUE_APP_STATIC_URL
+      STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
-  }
+  },
 };
 export default MainPage;
 </script>

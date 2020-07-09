@@ -45,6 +45,7 @@ export const Schedule = {
           content: `
                 <h3 class="travelsection__timelinesection__header">1:00 PM - 1:30 PM</h3>
                 <p>Arrive at the Carnegie Center</p>
+                <p class="travelsection__timelinesection__paragraph">Street level parking is available around the Carnegie Center</p>
               `
         },
         {
@@ -179,5 +180,8 @@ export default Schedule;
 .fancyampersand {
   font-family: "Vladimir Script" !important;
   font-size: 26px;
+}
+.travelsection__timelinesection__paragraph {
+  text-align: left;
 }
 </style>
