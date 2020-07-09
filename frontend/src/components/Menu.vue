@@ -60,8 +60,13 @@
         <section-title class="menusection__title">Stations</section-title>
         <div class="menusection__station">
           <section-title>Station I - Indonesian</section-title>
-          <div class="menusection__item">
-            <div>
+          <div class="menusection__item menusection__itemsection">
+            <img
+              :src="`${STATIC_URL}${rijsttafel}`"
+              alt="image of indonesian rijsttafel"
+              class="menusection__item__img"
+            />
+            <div class="menusection__item__content--block">
               <category-title>Indonesian Rijsttafel</category-title>
               <list class="menusection__subtext">
                 <list-item>Steamed Rice</list-item>
@@ -75,22 +80,17 @@
                 <list-item>Warm Nan Bread</list-item>
               </list>
             </div>
-            <img
-              :src="`${STATIC_URL}${rijsttafel}`"
-              alt="image of indonesian rijsttafel"
-              class="menusection__item__img"
-            />
           </div>
         </div>
         <div class="menusection__station">
           <section-title>Station II - Chinese</section-title>
-          <div class="menusection__item">
+          <div class="menusection__item menusection__itemsection">
             <img
               :src="`${STATIC_URL}${seafood}`"
               alt="image of indonesian rijsttafel"
               class="menusection__item__img"
             />
-            <div>
+            <div class="menusection__item__content--block">
               <category-title>
                 Chinese Seafood Dish served with towers of Cantonese Spinach
                 Salad
@@ -109,13 +109,13 @@
         </div>
         <div class="menusection__station">
           <section-title>Station III - Latino</section-title>
-          <div class="menusection__item">
+          <div class="menusection__item menusection__itemsection">
             <img
               :src="`${STATIC_URL}${empanadas}`"
               alt="image of indonesian rijsttafel"
               class="menusection__item__img"
             />
-            <div>
+            <div class="menusection__item__content--block">
               <category-title>
                 Carved Chimichurri Skirt Steak
               </category-title>
@@ -226,6 +226,15 @@ ul.menusection__subtext li {
   }
 }
 @media screen and (max-width: 450px) {
+  .menusection__item__content--block {
+    width: 100%;
+  }
+  .menusection__itemsection {
+    flex-direction: column;
+  }
+  .menusection__itemsection li {
+    text-align: left;
+  }
   .menusection__column {
     max-width: 300px;
   }
