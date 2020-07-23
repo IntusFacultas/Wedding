@@ -60,8 +60,8 @@ export const Travel = {
     Paragraph,
     SectionTitle,
     FlexColumn,
-    FlexRow
-  }
+    FlexRow,
+  },
 };
 export default Travel;
 </script>
@@ -92,11 +92,18 @@ export default Travel;
 }
 .detailssection__map {
   margin: 5px 0;
+  background-color: #b8b8b8;
   width: 450px;
 }
 @media screen and (max-width: 450px) {
   .detailssection__map {
     width: 300px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .detailssection__map {
+    width: 250px;
+    max-height: 300px;
   }
 }
 </style>

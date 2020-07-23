@@ -12,9 +12,7 @@
         <a href="#">FAQ</a>
       </navbar-item>
       <navbar-item class="navbar__rsvpbuttoncontainer">
-        <n-button class="navbar__rsvpbutton" flavor="Secondary" :outline="true"
-          >RSVP</n-button
-        >
+        <n-button class="navbar__rsvpbutton" flavor="Secondary" :outline="true">RSVP</n-button>
       </navbar-item>
     </navbar-content>
   </raw-navbar>
@@ -48,6 +46,7 @@ export default Navbar;
 <style>
 .navbar {
   border-bottom: 1px solid #444;
+  opacity: 0.9;
 }
 .navbar__rsvpbuttoncontainer:hover {
   background-color: initial;

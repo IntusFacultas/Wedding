@@ -41,19 +41,19 @@ const props = {
     type: Object,
     default() {
       return Theme;
-    }
-  }
+    },
+  },
 };
 const TimelineContainer = styled("div", props)`
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
-  max-width: ${props => props.width};
+  max-width: ${(props) => props.width};
   &::after {
     content: "";
     position: absolute;
     width: 6px;
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.timelineColor
         ? props.timelineColor
         : props.theme && props.theme[props.timelineFlavor]
@@ -78,7 +78,7 @@ const TimelineContainer = styled("div", props)`
 const TimelineSection = styled("div", props)`
   padding: 10px 40px;
   position: relative;
-
+  background-color: white;
   width: 50%;
   &::after {
     content: "";
@@ -86,7 +86,7 @@ const TimelineSection = styled("div", props)`
     width: 25px;
     height: 25px;
     right: -17px;
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.circleColor
         ? props.circleColor
         : props.theme && props.theme[props.circleFlavor]
@@ -96,7 +96,7 @@ const TimelineSection = styled("div", props)`
         : "#d7d7d7"};
     border-width: 4px;
     border-style: solid;
-    border-color: ${props =>
+    border-color: ${(props) =>
       props.circleColor
         ? props.circleColor
         : props.theme && props.theme[props.circleFlavor]
@@ -108,7 +108,7 @@ const TimelineSection = styled("div", props)`
     border-radius: 50%;
     z-index: 1;
   }
-  ${props =>
+  ${(props) =>
     props.left
       ? `
         left: 0;
@@ -186,7 +186,7 @@ const TimelineSection = styled("div", props)`
       border-style: solid;
       border-width: 10px 10px 10px 0;
       border-color: transparent
-        ${props =>
+        ${(props) =>
           props.itemColor
             ? props.itemColor
             : props.theme && props.theme[props.itemFlavor]
@@ -199,15 +199,15 @@ const TimelineSection = styled("div", props)`
     &::after {
       left: 15px;
     }
-    ${props => (props.left ? `` : `left: 0%;`)}
+    ${(props) => (props.left ? `` : `left: 0%;`)}
   }
   &::after {
-    ${props => props.circleCustomization}
+    ${(props) => props.circleCustomization}
   }
 `;
 const TimelineContent = styled("div", props)`
   padding: 20px 30px;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.itemColor
       ? props.itemColor
       : props.theme && props.theme[props.itemFlavor]
@@ -216,7 +216,7 @@ const TimelineContent = styled("div", props)`
       ? props.defaultTheme[props.itemFlavor].background.color
       : "#d7d7d7"};
   border: 1px solid
-    ${props =>
+    ${(props) =>
       props.itemColor
         ? props.itemColor
         : props.theme && props.theme[props.itemFlavor]
@@ -231,7 +231,7 @@ export const Timeline = {
   components: {
     TimelineContainer,
     TimelineSection,
-    TimelineContent
+    TimelineContent,
   },
   props: {
     defaultItemColor: String,
@@ -241,8 +241,8 @@ export const Timeline = {
     timelineFlavor: { type: String, default: "Secondary" },
     timelineColor: String,
     width: { type: String, default: "1200px" },
-    items: Array
-  }
+    items: Array,
+  },
 };
 export default Timeline;
 </script>

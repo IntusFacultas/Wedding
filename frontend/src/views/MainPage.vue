@@ -1,18 +1,15 @@
 <template>
   <main class="mainpage">
     <Navbar></Navbar>
-    <background-image
-      :img="picture2"
-      height="80vh"
-      :positioning="picture2Formatting"
-    >
+    <background-image :img="picture2" height="80vh" :positioning="picture2Formatting">
       <page-title class="backgroundimage__title" flavor="White">
         April
         <span class="backgroundimage__ampersand">&amp;</span> Pedro
       </page-title>
-      <paragraph class="backgroundimage__subtext" flavor="White"
-        >June 12th, 2021 &bull; Cincinnati, Ohio</paragraph
-      >
+      <paragraph
+        class="backgroundimage__subtext"
+        flavor="White"
+      >June 12th, 2021 &bull; Cincinnati, Ohio</paragraph>
       <ScrollIndicator
         class="backgroundimage__scrollindicator"
         flavor="White"
@@ -23,22 +20,17 @@
     <content-section>
       <OurStory></OurStory>
     </content-section>
-    <background-image
-      id="details"
-      :img="picture1"
-      height="80vh"
-      :positioning="picture1Formatting"
-    >
-      <page-title class="backgroundimage__title" flavor="White"
-        >Details</page-title
-      >
+    <background-image id="details" :img="picture1" height="80vh" :positioning="picture1Formatting">
+      <page-title class="backgroundimage__title" flavor="White">Details</page-title>
     </background-image>
     <content-section>
       <ul class="detailsnavigation">
         <li>
           <a href="#travel">Travel</a>
         </li>
-        <li>Accomodation</li>
+        <li>
+          <a href="#accomodation">Accomodation</a>
+        </li>
         <li>
           <a href="#schedule">Schedule</a>
         </li>
@@ -49,6 +41,10 @@
         <li>Wedding Party</li>
       </ul>
       <Travel></Travel>
+      <Accomodation></Accomodation>
+    </content-section>
+    <background-image id="details" :img="picture4" height="80vh" :positioning="picture4Formatting"></background-image>
+    <content-section>
       <Schedule></Schedule>
       <Menu></Menu>
     </content-section>
@@ -63,14 +59,17 @@ import ScrollIndicator from "../components/ScrollIndicator";
 import styled from "vue-styled-components";
 import picture1 from "../assets/picture1.png";
 import picture2 from "../assets/picture2.png";
+import picture4 from "../assets/picture4.jpg";
 import OurStory from "../components/OurStory";
 import Travel from "../components/Travel";
 import Schedule from "../components/Schedule";
 import Menu from "../components/Menu";
+import Accomodation from "../components/Accomodation";
 import { PageTitle, Paragraph } from "@IntusFacultas/typography";
 import VSWoff from "../assets/VladimirScript.woff";
 import VSWoff2 from "../assets/VladimirScript.woff2";
 import { THEME } from "../configuration";
+import Background from "../assets/Wedding Background Optimized.svg";
 const props = {
   img: String,
   height: String,
@@ -101,7 +100,27 @@ const BackgroundImage = styled("div", props)`
   }
 `;
 const ContentSection = styled.div`
-  background-color: white;
+  &::before {
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0) -65%,
+        rgba(255, 255, 255, 1)
+      ),
+      url("${process.env.VUE_APP_STATIC_URL}${Background}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.1;
+  }
+  position: relative;
   padding: 1em 2em;
   @media screen and (max-width: 450px) {
     text-align: center;
@@ -120,6 +139,7 @@ export const MainPage = {
     ContentSection,
     Travel,
     Menu,
+    Accomodation,
     OurStory,
     Navbar,
     Schedule,
@@ -164,6 +184,8 @@ export const MainPage = {
             background-attachment: scroll;
         }
       `,
+      picture4,
+      picture4Formatting: ``,
       STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
   },
