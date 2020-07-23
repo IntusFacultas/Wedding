@@ -280,7 +280,7 @@ export default Accomodation;
   align-items: center;
 }
 .accomodation__selectcontent {
-  text-align: left;
+  text-align: left !important;
 }
 .accomodation__radio--second {
   margin-left: 1em;
@@ -289,7 +289,7 @@ export default Accomodation;
   align-items: center;
 }
 .accomodation__sortinginput {
-  text-align: initial;
+  text-align: initial !important;
 }
 .accomodation__subtitle {
   font-size: 25px;
