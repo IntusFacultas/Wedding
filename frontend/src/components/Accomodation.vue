@@ -271,9 +271,9 @@ export default Accomodation;
   transition: width 0.3s ease-in-out;
 }
 .accomodation__filters--toggled {
-  pointer-events: all;
-  opacity: 1;
-  clip-path: circle(100% at 160px 0px);
+  pointer-events: all !important;
+  opacity: 1 !important;
+  clip-path: circle(100% at 160px 0px) !important;
 }
 .accomodation__selectcontainer {
   flex-direction: column;
