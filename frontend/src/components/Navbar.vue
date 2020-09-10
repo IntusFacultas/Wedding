@@ -8,9 +8,6 @@
       <navbar-item>
         <a href="#">Registry</a>
       </navbar-item>
-      <navbar-item>
-        <a href="#">FAQ</a>
-      </navbar-item>
       <navbar-item class="navbar__rsvpbuttoncontainer">
         <n-button class="navbar__rsvpbutton" flavor="Secondary" :outline="true">RSVP</n-button>
       </navbar-item>

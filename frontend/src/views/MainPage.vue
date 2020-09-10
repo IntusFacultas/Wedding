@@ -37,7 +37,9 @@
         <li>
           <a href="#menu">Menu</a>
         </li>
-        <li>Dress Code</li>
+        <li>
+          <a href="#dresscode">Dress Code</a>
+        </li>
         <li>Wedding Party</li>
       </ul>
       <Travel></Travel>
@@ -47,6 +49,10 @@
     <content-section>
       <Schedule></Schedule>
       <Menu></Menu>
+    </content-section>
+    <background-image id="details" :img="picture5" height="80vh" :positioning="picture5Formatting"></background-image>
+    <content-section>
+      <DressCode></DressCode>
     </content-section>
     <CopyrightFooter></CopyrightFooter>
   </main>
@@ -60,9 +66,11 @@ import styled from "vue-styled-components";
 import picture1 from "../assets/picture1.png";
 import picture2 from "../assets/picture2.png";
 import picture4 from "../assets/picture4.jpg";
+import picture5 from "../assets/picture5.jpg";
 import OurStory from "../components/OurStory";
 import Travel from "../components/Travel";
 import Schedule from "../components/Schedule";
+import DressCode from "../components/DressCode";
 import Menu from "../components/Menu";
 import Accomodation from "../components/Accomodation";
 import { PageTitle, Paragraph } from "@IntusFacultas/typography";
@@ -76,8 +84,8 @@ const props = {
   positioning: String,
 };
 const BackgroundImage = styled("div", props)`
-    background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
-  props.img}");
+  background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
+    props.img}");
   height: ${(props) => props.height};
   background-attachment: fixed;
   background-size: cover;
@@ -85,18 +93,18 @@ const BackgroundImage = styled("div", props)`
   ${(props) => props.positioning}
   position:relative;
   background-color: #444;
-  display:flex;
+  display: flex;
   padding: 0 1em;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   @font-face {
-        font-family: 'Vladimir Script';
-        src: url('${process.env.VUE_APP_STATIC_URL}${VSWoff}') format('woff2'),
-            url('${process.env.VUE_APP_STATIC_URL}${VSWoff2}') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
+    font-family: "Vladimir Script";
+    src: url("${process.env.VUE_APP_STATIC_URL}${VSWoff}") format("woff2"),
+      url("${process.env.VUE_APP_STATIC_URL}${VSWoff2}") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 `;
 const ContentSection = styled.div`
@@ -143,6 +151,7 @@ export const MainPage = {
     OurStory,
     Navbar,
     Schedule,
+    DressCode,
   },
   data() {
     return {
@@ -186,6 +195,10 @@ export const MainPage = {
       `,
       picture4,
       picture4Formatting: ``,
+      picture5,
+      picture5Formatting: `
+        background-position: center -628px;
+      `,
       STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
   },
