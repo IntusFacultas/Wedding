@@ -230,6 +230,8 @@ ul.menusection__subtext li {
   }
   .menusection__column {
     max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .menusection__item {
     width: 300px;

@@ -219,7 +219,7 @@ export const MainPage = {
       picture6,
       picture6Formatting: `
         @media screen and (max-width: 450px) {
-          background-position: -160px 0;
+          background-position: 30% 0;
         }
       `,
       STATIC_URL: process.env.VUE_APP_STATIC_URL,
