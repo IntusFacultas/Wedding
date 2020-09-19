@@ -62,19 +62,22 @@ export const OurStory = {
     FlexRow,
     Paragraph,
     SectionTitle,
-    picture3
+    picture3,
   },
   data() {
     return {
       picture3,
-      STATIC_URL: process.env.VUE_APP_STATIC_URL
+      STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
-  }
+  },
 };
 export default OurStory;
 </script>
 
 <style>
+/* .ourstory {
+  margin: 5em 0em;
+} */
 .ourstory__titlearea {
   width: 50%;
   display: flex;
@@ -89,11 +92,11 @@ export default OurStory;
 }
 .ourstory__paragraphs p {
   width: 80%;
-  margin: 0.5em 0;
+  /* margin: 0.5em 0; */
 }
 .ourstory__paragraphs__image {
   float: left;
-  margin-right: 1em;
+  /* margin-right: 1em; */
 }
 .ourstory__paragraphs__image img {
   width: 300px;
@@ -117,5 +120,10 @@ export default OurStory;
     align-items: center;
     justify-content: center;
   }
+}
+.ourstory {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

@@ -17,7 +17,7 @@ import {
   WebLink,
   Paragraph,
   SectionTitle,
-  SubSectionTitle
+  SubSectionTitle,
 } from "@IntusFacultas/typography";
 import { FlexColumn, FlexRow } from "@IntusFacultas/layout";
 import VueRawTable from "@IntusFacultas/raw-table";
@@ -25,7 +25,7 @@ import {
   TableCarat,
   TableRow,
   TableHeader,
-  TableCell
+  TableCell,
 } from "@IntusFacultas/table";
 import camera from "../assets/camera.svg";
 import cocktail from "../assets/cocktail.svg";
@@ -46,7 +46,7 @@ export const Schedule = {
                 <h3 class="travelsection__timelinesection__header">1:00 PM - 1:30 PM</h3>
                 <p>Arrive at the Carnegie Center</p>
                 <p class="travelsection__timelinesection__paragraph">Street level parking is available around the Carnegie Center</p>
-              `
+              `,
         },
         {
           content: `
@@ -67,7 +67,7 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
-              `
+              `,
         },
         {
           content: `
@@ -88,7 +88,7 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
-            `
+            `,
         },
         {
           content: `
@@ -107,7 +107,7 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
-            `
+            `,
         },
         {
           content: `
@@ -128,9 +128,9 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
-            `
-        }
-      ]
+            `,
+        },
+      ],
     };
   },
   components: {
@@ -145,8 +145,8 @@ export const Schedule = {
     TableRow,
     TableHeader,
     TableCell,
-    SubSectionTitle
-  }
+    SubSectionTitle,
+  },
 };
 export default Schedule;
 </script>
@@ -155,13 +155,13 @@ export default Schedule;
 .travelsection__cell__img {
   height: 24px;
   width: 24px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   display: inline-block;
 }
 .travelsection__timelinesection__header {
-  margin-block-start: 0;
-  margin-bottom: 1em !important;
+  /* margin-block-start: 0;
+  margin-bottom: 1em !important; */
 }
 .travelsection__cell__largeimg {
   height: 32px;
@@ -169,8 +169,8 @@ export default Schedule;
 }
 .detailssection__table {
   max-width: 840px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 .travelsection__cell {
   width: 50%;

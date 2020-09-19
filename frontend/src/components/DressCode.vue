@@ -7,9 +7,9 @@
       The general rule of thumb is
       <strong>semi-formal.</strong>
     </paragraph>
-    <flex-row>
+    <flex-row class="dresscode__columns">
       <flex-column :md="6" :sm="12" class="dresscodecolumn">
-        <img class="dress__img" :src="dress" alt="Women's dress" />
+        <img class="dress__img" :src="`${STATIC_URL}${dress}`" alt="Women's dress" />
         <section-title>Ladies</section-title>
         <paragraph>Ladies, wear what you feel most comfortable in. If that means a dress, suit or skirt, then great!</paragraph>
         <paragraph>
@@ -17,7 +17,7 @@
         </paragraph>
       </flex-column>
       <flex-column :md="6" :sm="12" class="dresscodecolumn">
-        <img :src="suit" alt="Men's suit" class="dress__img" />
+        <img :src="`${STATIC_URL}${suit}`" alt="Men's suit" class="dress__img" />
         <section-title>Gentlemen</section-title>
         <paragraph>Gentlemen, two-piece suits, sports jackets, or just a vest and tie are all great options for the event!</paragraph>
         <paragraph>We only ask that you avoid a three-piece suit, as the bridal party will be wearing three-piece suits.</paragraph>
@@ -40,6 +40,7 @@ export const DressCode = {
     return {
       dress,
       suit,
+      STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
   },
   components: {
@@ -62,4 +63,7 @@ export default DressCode;
   justify-content: flex-start;
   align-items: center;
 }
+/* .dresscode__columns {
+  margin-top: 1.5em;
+} */
 </style>

@@ -40,39 +40,51 @@
         <li>
           <a href="#dresscode">Dress Code</a>
         </li>
-        <li>Wedding Party</li>
+        <li>
+          <a href="#weddingparty">Wedding Party</a>
+        </li>
       </ul>
       <Travel></Travel>
-      <Accomodation></Accomodation>
+      <Accomodation class="accomodation"></Accomodation>
     </content-section>
-    <background-image id="details" :img="picture4" height="80vh" :positioning="picture4Formatting"></background-image>
+    <background-image :img="picture4" height="80vh" :positioning="picture4Formatting"></background-image>
     <content-section>
-      <Schedule></Schedule>
-      <Menu></Menu>
+      <Schedule class="schedule"></Schedule>
     </content-section>
-    <background-image id="details" :img="picture5" height="80vh" :positioning="picture5Formatting"></background-image>
+    <background-image :img="picture5" height="80vh" :positioning="picture5Formatting"></background-image>
     <content-section>
-      <DressCode></DressCode>
+      <Menu class="menu"></Menu>
+    </content-section>
+    <background-image :img="picture6" height="80vh" :positioning="picture6Formatting"></background-image>
+    <content-section>
+      <DressCode class="dresscode"></DressCode>
+      <hr />
+      <WeddingParty class="weddingparty"></WeddingParty>
     </content-section>
     <CopyrightFooter></CopyrightFooter>
   </main>
 </template>
 
 <script>
-import Navbar from "../components/Navbar";
-import CopyrightFooter from "../components/CopyrightFooter";
-import ScrollIndicator from "../components/ScrollIndicator";
 import styled from "vue-styled-components";
+
+// content
+import Navbar from "../components/Navbar";
+import ScrollIndicator from "../components/ScrollIndicator";
 import picture1 from "../assets/picture1.png";
 import picture2 from "../assets/picture2.png";
 import picture4 from "../assets/picture4.jpg";
 import picture5 from "../assets/picture5.jpg";
+import picture6 from "../assets/picture6.jpg";
 import OurStory from "../components/OurStory";
 import Travel from "../components/Travel";
-import Schedule from "../components/Schedule";
-import DressCode from "../components/DressCode";
-import Menu from "../components/Menu";
 import Accomodation from "../components/Accomodation";
+import Schedule from "../components/Schedule";
+import Menu from "../components/Menu";
+import DressCode from "../components/DressCode";
+import WeddingParty from "../components/WeddingParty";
+import CopyrightFooter from "../components/CopyrightFooter";
+
 import { PageTitle, Paragraph } from "@IntusFacultas/typography";
 import VSWoff from "../assets/VladimirScript.woff";
 import VSWoff2 from "../assets/VladimirScript.woff2";
@@ -128,8 +140,9 @@ const ContentSection = styled.div`
     z-index: -2;
     opacity: 0.1;
   }
+
   position: relative;
-  padding: 1em 2em;
+  padding: 3em 0em;
   @media screen and (max-width: 450px) {
     text-align: center;
     & * {
@@ -139,19 +152,20 @@ const ContentSection = styled.div`
 `;
 export const MainPage = {
   components: {
+    Navbar,
     PageTitle,
     Paragraph,
     BackgroundImage,
     CopyrightFooter,
     ScrollIndicator,
     ContentSection,
-    Travel,
-    Menu,
-    Accomodation,
     OurStory,
-    Navbar,
+    Travel,
+    Accomodation,
     Schedule,
+    Menu,
     DressCode,
+    WeddingParty,
   },
   data() {
     return {
@@ -198,6 +212,15 @@ export const MainPage = {
       picture5,
       picture5Formatting: `
         background-position: center -628px;
+        @media screen and (max-width: 450px) {
+          background-position: 60% center;
+        }
+      `,
+      picture6,
+      picture6Formatting: `
+        @media screen and (max-width: 450px) {
+          background-position: -160px 0;
+        }
       `,
       STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
@@ -236,6 +259,8 @@ export default MainPage;
 .detailsnavigation {
   display: flex;
   justify-content: center;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   list-style: none;
   padding-left: 0px;
   flex-wrap: wrap;
@@ -288,4 +313,62 @@ export default MainPage;
     border-left: 0px solid white;
   }
 }
+
+.detailssection__mapcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detailssection {
+  text-align: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+.detailssection__title {
+  font-size: 35px;
+  margin-bottom: 1em !important;
+}
+.detailssection__column {
+  justify-content: center;
+}
+.detailssection a {
+  font-size: 16px;
+}
+.detailssection ul {
+  text-align: left;
+}
+.detailssection__map {
+  /* margin: 5px 0; */
+  background-color: #b8b8b8;
+  width: 450px;
+}
+@media screen and (max-width: 450px) {
+  .detailssection__map {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .detailssection__map {
+    width: 250px;
+    max-height: 300px;
+  }
+}
+/* .schedule {
+  margin-bottom: 5em;
+  margin-top: 3em;
+}
+.menu {
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+.weddingparty {
+  margin-top: 5em;
+}
+.dresscode {
+  margin-top: 3em;
+  margin-bottom: 5em;
+} */
 </style>

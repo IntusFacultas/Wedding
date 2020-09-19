@@ -67,43 +67,4 @@ export default Travel;
 </script>
 
 <style>
-.detailssection__mapcontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.detailssection {
-  text-align: center;
-  padding-top: 2em;
-  margin-bottom: 5em;
-}
-.detailssection__title {
-  font-size: 35px;
-}
-.detailssection__column {
-  justify-content: center;
-}
-.detailssection a {
-  font-size: 16px;
-}
-.detailssection ul {
-  text-align: left;
-}
-.detailssection__map {
-  margin: 5px 0;
-  background-color: #b8b8b8;
-  width: 450px;
-}
-@media screen and (max-width: 450px) {
-  .detailssection__map {
-    width: 300px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .detailssection__map {
-    width: 250px;
-    max-height: 300px;
-  }
-}
 </style>

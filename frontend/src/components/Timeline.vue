@@ -46,9 +46,11 @@ const props = {
 };
 const TimelineContainer = styled("div", props)`
   box-sizing: border-box;
-  margin: 0 auto;
+  // margin: 0 auto;
   position: relative;
   max-width: ${(props) => props.width};
+  margin-left: auto;
+  margin-right: auto;
   &::after {
     content: "";
     position: absolute;
@@ -64,7 +66,7 @@ const TimelineContainer = styled("div", props)`
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
+    // margin-left: -3px;
   }
   & * {
     box-sizing: border-box;

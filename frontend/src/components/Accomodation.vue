@@ -9,9 +9,9 @@
         <a href="#accomodationNearPedro">Near Pedro's Family</a>
       </li>
       <li class="accomodation__filters__toggler">
-        <span @click="filtersToggled = !filtersToggled">
+        <span style="white-space: nowrap" @click="filtersToggled = !filtersToggled">
           <span v-if="filtersToggled">Close&nbsp;</span>
-          <span v-else>&nbsp;View&nbsp;</span>Filter
+          <span v-else>View&nbsp;</span>Filters
         </span>
         <accomodation-filters :class="{'accomodation__filters--toggled': filtersToggled}">
           <div class="accomodation__selectcontent">
@@ -41,13 +41,13 @@
       id="accomodationNearCarnegie"
       class="accomodation__subtitle"
     >Hotels near the Carnegie Center</sub-section-title>
-    <hr />
+    <hr class="hoteldivider" />
     <hotel v-for="(hotel, index) in sortedHotelsNearEvent" :key="`event-${index}`" :hotel="hotel"></hotel>
     <sub-section-title
       id="accomodationNearPedro"
       class="accomodation__subtitle accomodation__subtitle--second"
     >Hotels near Pedro's Family</sub-section-title>
-    <hr />
+    <hr class="hoteldivider" />
     <hotel v-for="(hotel, index) in sortedHotelsNearFamily" :key="`family-${index}`" :hotel="hotel"></hotel>
   </div>
 </template>
@@ -255,9 +255,12 @@ export default Accomodation;
 </script>
 
 <style>
-.accomodation__navigation {
+/* .accomodation__navigation {
   margin-bottom: 5em;
 }
+.hoteldivider {
+  margin-bottom: 1.5em;
+} */
 .accomodation__filters__toggler {
   width: 102px;
   position: relative;
@@ -282,9 +285,9 @@ export default Accomodation;
 .accomodation__selectcontent {
   text-align: left !important;
 }
-.accomodation__radio--second {
+/* .accomodation__radio--second {
   margin-left: 1em;
-}
+} */
 .accomodation__radios {
   align-items: center;
 }
@@ -293,8 +296,14 @@ export default Accomodation;
 }
 .accomodation__subtitle {
   font-size: 25px;
+  margin-top: 2em;
 }
-.accomodation__subtitle--second {
+/* .accomodation__subtitle--second {
   margin-top: 100px;
+} */
+@media screen and (max-width: 450px) {
+  #accomodation {
+    font-size: 30px;
+  }
 }
 </style>

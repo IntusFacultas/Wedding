@@ -34,7 +34,7 @@ const FooterContainer = styled("footer")`
 const FooterLine = styled("section")`
   display: block;
   & > span:first-child {
-    margin-right: 5px;
+    // margin-right: 5px;
   }
   & > span {
     display: inline-block;
@@ -57,8 +57,8 @@ export const CopyrightFooter = {
     FooterContainer,
     TextContent,
     FooterLine,
-    FooterText
-  }
+    FooterText,
+  },
 };
 export default CopyrightFooter;
 </script>

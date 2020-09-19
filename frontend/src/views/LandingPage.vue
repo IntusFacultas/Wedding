@@ -28,13 +28,13 @@ import background from "../assets/Wedding Background Optimized.svg";
 import Logo from "../assets/Wedding Logo.svg";
 import { PageTitle, WebLink, SmallText } from "@IntusFacultas/typography";
 const props = {
-  svg: String
+  svg: String,
 };
 const CustomAnnouncement = styled("p")`
   font-family: "Montserrat";
   color: #444;
-  margin-block-start: 16px;
-  margin-block-end: 0;
+  // margin-block-start: 16px;
+  // margin-block-end: 0;
   font-size: 20px;
 `;
 const LandingPageBackground = styled("div", props)`
@@ -42,15 +42,15 @@ const LandingPageBackground = styled("div", props)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  text-align:center;
-  background-image: url("${process.env.VUE_APP_STATIC_URL}${props =>
-  props.svg}");
+  text-align: center;
+  background-image: url("${process.env.VUE_APP_STATIC_URL}${(props) =>
+    props.svg}");
   background-size: 3000px;
   background-position: center;
   background-repeat: repeat;
   height: 100vh;
   width: 100%;
-  overflow:auto;
+  overflow: auto;
 `;
 export const LandingPage = {
   components: {
@@ -59,23 +59,23 @@ export const LandingPage = {
     PageTitle,
     CustomAnnouncement,
     WebLink,
-    SmallText
+    SmallText,
   },
   data() {
     return {
       svg: background,
       logo: Logo,
-      STATIC_URL: process.env.VUE_APP_STATIC_URL
+      STATIC_URL: process.env.VUE_APP_STATIC_URL,
     };
   },
-  mounted() {}
+  mounted() {},
 };
 export default LandingPage;
 </script>
 
 <style>
 .wedding-logo {
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
 .landing-modal-title {
   font-size: 50px;
@@ -84,7 +84,7 @@ export default LandingPage;
   font-size: 25px;
 }
 .patience-line {
-  margin-top: 16px !important;
+  /* margin-top: 16px !important; */
 }
 .landing-modal-container {
   min-width: 350px;

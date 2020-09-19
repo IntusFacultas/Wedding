@@ -3,21 +3,13 @@
     <section-title id="menu" class="detailssection__title">Menu</section-title>
     <flex-row>
       <div :md="6" :sm="12" class="menusection__column">
-        <section-title class="menusection__title"
-          >Passed Hors D'Oeuvres</section-title
-        >
+        <section-title class="menusection__title">Passed Hors D'Oeuvres</section-title>
         <div class="menusection__item">
           <div>
             <category-title>Edamame Pot Sticker</category-title>
-            <paragraph :size="14" class="menusection__subtext"
-              >with Spicy Soy</paragraph
-            >
+            <paragraph :size="14" class="menusection__subtext">with Spicy Soy</paragraph>
           </div>
-          <img
-            :src="`${STATIC_URL}${potsticker}`"
-            alt
-            class="menusection__item__img"
-          />
+          <img :src="`${STATIC_URL}${potsticker}`" alt class="menusection__item__img" />
         </div>
         <div class="menusection__item">
           <img
@@ -27,9 +19,7 @@
           />
           <div>
             <category-title>Chicken Satay</category-title>
-            <paragraph :size="14" class="menusection__subtext"
-              >with Peanut Sauce</paragraph
-            >
+            <paragraph :size="14" class="menusection__subtext">with Peanut Sauce</paragraph>
           </div>
         </div>
         <div class="menusection__item">
@@ -47,12 +37,8 @@
             class="menusection__item__img"
           />
           <div>
-            <category-title>
-              Spicy Tuna Tartar on Guacamole Toast
-            </category-title>
-            <paragraph class="menusection__subtext" :size="14">
-              with Guasacaca
-            </paragraph>
+            <category-title>Spicy Tuna Tartar on Guacamole Toast</category-title>
+            <paragraph class="menusection__subtext" :size="14">with Guasacaca</paragraph>
           </div>
         </div>
       </div>
@@ -101,9 +87,7 @@
                 <list-item>Hard Boiled Egg,</list-item>
                 <list-item>and Bacon*</list-item>
               </list>
-              <paragraph class="menusection__subtext">
-                * some without bacon for vegetarians
-              </paragraph>
+              <paragraph class="menusection__subtext">* some without bacon for vegetarians</paragraph>
             </div>
           </div>
         </div>
@@ -116,15 +100,11 @@
               class="menusection__item__img"
             />
             <div class="menusection__item__content--block">
-              <category-title>
-                Carved Chimichurri Skirt Steak
-              </category-title>
+              <category-title>Carved Chimichurri Skirt Steak</category-title>
               <list class="menusection__subtext">
                 <list-item>with Ripe Plantains,</list-item>
                 <list-item>Cheese Empanadas,</list-item>
-                <list-item
-                  >and Cilantro Mojo Grilled Assorted Vegetables</list-item
-                >
+                <list-item>and Cilantro Mojo Grilled Assorted Vegetables</list-item>
               </list>
             </div>
           </div>
@@ -181,10 +161,14 @@ export default Menu;
 <style>
 .menusection {
   text-align: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menusection__column {
   display: flex;
   flex: 1;
+  align-items: center;
   flex-direction: column;
   width: 50%;
 }
@@ -194,12 +178,12 @@ export default Menu;
 .menusection__item__img {
   height: 200px;
   width: 151px;
-  margin: 0 0.5em;
+  /* margin: 0 0.5em; */
   clip-path: circle(42%);
 }
 .menusection__title {
   font-size: 1.8em;
-  margin: 1.5em 0em 0.5em 0;
+  /* margin: 1.5em 0em 0.5em 0; */
 }
 .menusection__subtext {
   font-style: italic;
@@ -213,8 +197,8 @@ ul.menusection__subtext li {
   padding-left: 0.5em;
 }
 .menusection__item {
-  margin: 0 auto;
-  margin-top: 1em;
+  /* margin: 0 auto;
+  margin-top: 1em; */
   display: flex;
   justify-content: space-around;
   width: 500px;
@@ -225,9 +209,13 @@ ul.menusection__subtext li {
     width: 100%;
   }
 }
+.menusection__item__content--block {
+  text-align: left;
+}
 @media screen and (max-width: 450px) {
   .menusection__item__content--block {
     width: 100%;
+    text-align: center;
   }
   .menusection__itemsection {
     flex-direction: column;
@@ -241,5 +229,8 @@ ul.menusection__subtext li {
   .menusection__item {
     width: 300px;
   }
+}
+.menusection__station h2 {
+  margin-bottom: 0.5em !important;
 }
 </style>
