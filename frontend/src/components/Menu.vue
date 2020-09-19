@@ -212,6 +212,11 @@ ul.menusection__subtext li {
 .menusection__item__content--block {
   text-align: left;
 }
+@media screen and (min-width: 451px) {
+  .menusection__column:nth-of-type(2) {
+    border-left: 2px solid #444;
+  }
+}
 @media screen and (max-width: 450px) {
   .menusection__item__content--block {
     width: 100%;

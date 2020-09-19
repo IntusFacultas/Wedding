@@ -41,13 +41,11 @@
       id="accomodationNearCarnegie"
       class="accomodation__subtitle"
     >Hotels near the Carnegie Center</sub-section-title>
-    <hr class="hoteldivider" />
     <hotel v-for="(hotel, index) in sortedHotelsNearEvent" :key="`event-${index}`" :hotel="hotel"></hotel>
     <sub-section-title
       id="accomodationNearPedro"
       class="accomodation__subtitle accomodation__subtitle--second"
     >Hotels near Pedro's Family</sub-section-title>
-    <hr class="hoteldivider" />
     <hotel v-for="(hotel, index) in sortedHotelsNearFamily" :key="`family-${index}`" :hotel="hotel"></hotel>
   </div>
 </template>
@@ -296,11 +294,16 @@ export default Accomodation;
 }
 .accomodation__subtitle {
   font-size: 25px;
-  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-bottom: 2px solid #444;
 }
 /* .accomodation__subtitle--second {
   margin-top: 100px;
 } */
+#accomodationNearPedro {
+  border-top: 2px solid #444;
+}
 @media screen and (max-width: 450px) {
   #accomodation {
     font-size: 30px;

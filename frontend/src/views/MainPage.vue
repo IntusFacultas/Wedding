@@ -67,7 +67,7 @@
 
 <script>
 import styled from "vue-styled-components";
-
+import "../assets/fonts/fonts.css";
 // content
 import Navbar from "../components/Navbar";
 import ScrollIndicator from "../components/ScrollIndicator";
@@ -242,10 +242,10 @@ export default MainPage;
 
 .backgroundimage__ampersand {
   font-family: "Vladimir Script" !important;
-  font-size: 90px;
+  font-size: 140px;
 }
 .backgroundimage__subtext {
-  font-size: 19px;
+  font-size: 25px !important;
   text-shadow: 2px 2px #000;
 }
 .backgroundimage__scrollindicator {
@@ -266,10 +266,23 @@ export default MainPage;
   flex-wrap: wrap;
   border-bottom: 2px solid #444;
 }
+@media screen and (min-width: 451px) {
+  .backgroundimage__title {
+    font-size: 100px;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 450px) {
   .detailsnavigation {
     flex-direction: column;
     align-items: center;
+  }
+  .backgroundimage__ampersand {
+    font-size: 96px;
+  }
+  .backgroundimage__subtext {
+    font-size: 15px !important;
   }
 }
 .detailsnavigation li {
@@ -356,19 +369,4 @@ export default MainPage;
     max-height: 300px;
   }
 }
-/* .schedule {
-  margin-bottom: 5em;
-  margin-top: 3em;
-}
-.menu {
-  margin-top: 5em;
-  margin-bottom: 3em;
-}
-.weddingparty {
-  margin-top: 5em;
-}
-.dresscode {
-  margin-top: 3em;
-  margin-bottom: 5em;
-} */
 </style>

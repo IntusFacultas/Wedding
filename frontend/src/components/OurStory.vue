@@ -91,12 +91,11 @@ export default OurStory;
   border-left: 2px solid #444;
 }
 .ourstory__paragraphs p {
-  width: 80%;
-  /* margin: 0.5em 0; */
+  margin: 0.5em 0;
+  padding-left: 1em;
 }
 .ourstory__paragraphs__image {
-  float: left;
-  /* margin-right: 1em; */
+  margin: 0.5em auto;
 }
 .ourstory__paragraphs__image img {
   width: 300px;
