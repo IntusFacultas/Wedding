@@ -164,8 +164,15 @@ export default WeddingParty;
     width: initial;
   }
   .weddingparty__container__item__image {
-    height: initial;
-    width: 250px;
+    /* height: initial; */
+    /* max-height: 100%; */
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* height: 300px; */
   }
 }
 </style>
