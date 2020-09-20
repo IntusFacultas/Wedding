@@ -208,18 +208,25 @@ export const MainPage = {
         }
       `,
       picture4,
-      picture4Formatting: ``,
+      picture4Formatting: `
+        @media screen and (max-width: 450px) {
+          background-position: 5% center;
+          background-attachment: scroll;
+        }
+      `,
       picture5,
       picture5Formatting: `
         background-position: center -260px;
         @media screen and (max-width: 450px) {
-          background-position: 60% center;
+          background-position: center center;
+          background-attachment: scroll;
         }
       `,
       picture6,
       picture6Formatting: `
         @media screen and (max-width: 450px) {
-          background-position: 30% 0;
+          background-position: 30% center;
+          background-attachment: scroll;
         }
       `,
       STATIC_URL: process.env.VUE_APP_STATIC_URL,
