@@ -211,7 +211,7 @@ export const MainPage = {
       picture4Formatting: ``,
       picture5,
       picture5Formatting: `
-        background-position: center -628px;
+        background-position: center -260px;
         @media screen and (max-width: 450px) {
           background-position: 60% center;
         }
