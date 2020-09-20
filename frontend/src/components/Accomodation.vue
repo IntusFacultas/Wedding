@@ -294,8 +294,8 @@ export default Accomodation;
 }
 .accomodation__subtitle {
   font-size: 25px;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   border-bottom: 2px solid #444;
 }
 /* .accomodation__subtitle--second {
