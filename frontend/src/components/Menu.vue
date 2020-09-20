@@ -172,6 +172,9 @@ export default Menu;
   flex-direction: column;
   width: 50%;
 }
+.menusection__column:nth-of-type(2) {
+  justify-content: space-between;
+}
 .menusection__station {
   margin-top: 1em;
 }
