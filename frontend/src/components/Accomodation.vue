@@ -41,12 +41,26 @@
       id="accomodationNearCarnegie"
       class="accomodation__subtitle"
     >Hotels near the Carnegie Center</sub-section-title>
-    <hotel v-for="(hotel, index) in sortedHotelsNearEvent" :key="`event-${index}`" :hotel="hotel"></hotel>
+    <div class="hotelcontainer">
+      <hotel
+        class="hotel"
+        v-for="(hotel, index) in sortedHotelsNearEvent"
+        :key="`event-${index}`"
+        :hotel="hotel"
+      ></hotel>
+    </div>
     <sub-section-title
       id="accomodationNearPedro"
       class="accomodation__subtitle accomodation__subtitle--second"
     >Hotels near Pedro's Family</sub-section-title>
-    <hotel v-for="(hotel, index) in sortedHotelsNearFamily" :key="`family-${index}`" :hotel="hotel"></hotel>
+    <div class="hotelcontainer">
+      <hotel
+        class="hotel--pedro"
+        v-for="(hotel, index) in sortedHotelsNearFamily"
+        :key="`family-${index}`"
+        :hotel="hotel"
+      ></hotel>
+    </div>
   </div>
 </template>
 
@@ -253,10 +267,11 @@ export default Accomodation;
 </script>
 
 <style>
-/* .accomodation__navigation {
-  margin-bottom: 5em;
+.accomodation__navigation {
+  border-color: #dedede !important;
+  padding-block-end: 1.5em !important;
 }
-.hoteldivider {
+/*.hoteldivider {
   margin-bottom: 1.5em;
 } */
 .accomodation__filters__toggler {
@@ -296,17 +311,25 @@ export default Accomodation;
   font-size: 25px;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid #dedede;
 }
 /* .accomodation__subtitle--second {
   margin-top: 100px;
 } */
 #accomodationNearPedro {
-  border-top: 2px solid #444;
+  border-top: 2px solid #dedede;
 }
 @media screen and (max-width: 450px) {
   #accomodation {
     font-size: 30px;
   }
+}
+.hotelcontainer {
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+}
+.hotelcontainer:last-of-type {
+  margin-bottom: 0em;
+  margin-top: 1.5em;
 }
 </style>

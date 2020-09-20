@@ -221,6 +221,10 @@ export const MainPage = {
           background-position: center center;
           background-attachment: scroll;
         }
+        @media screen and (max-height: 450px) {
+          background-position: center -160px;
+          background-attachment: scroll;
+        }
       `,
       picture6,
       picture6Formatting: `
@@ -261,6 +265,11 @@ export default MainPage;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-height: 450px) {
+  .backgroundimage__scrollindicator {
+    display: none;
+  }
 }
 
 .detailsnavigation {
@@ -345,7 +354,7 @@ export default MainPage;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding: 2em;
+  padding: 2em 0;
 }
 .detailssection__title {
   font-size: 35px;

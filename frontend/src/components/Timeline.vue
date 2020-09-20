@@ -76,6 +76,11 @@ const TimelineContainer = styled("div", props)`
       left: 31px;
     }
   }
+  @media screen and (max-height: 450px) {
+    &::after {
+      left: 31px;
+    }
+  }
 `;
 const TimelineSection = styled("div", props)`
   padding: 10px 40px;
@@ -179,6 +184,31 @@ const TimelineSection = styled("div", props)`
   `}
 
   @media screen and (max-width: 600px) {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+
+    &::before {
+      left: 60px;
+      border-style: solid;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent
+        ${(props) =>
+          props.itemColor
+            ? props.itemColor
+            : props.theme && props.theme[props.itemFlavor]
+            ? props.theme[props.itemFlavor].border.color
+            : props.defaultTheme[props.itemFlavor]
+            ? props.defaultTheme[props.itemFlavor].border.color
+            : "white"}
+        transparent transparent;
+    }
+    &::after {
+      left: 15px;
+    }
+    ${(props) => (props.left ? `` : `left: 0%;`)}
+  }
+  @media screen and (max-height: 450px) {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;

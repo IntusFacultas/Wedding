@@ -97,6 +97,14 @@ export default Hotel;
     align-items: center;
   }
 }
+@media screen and (max-height: 400px) {
+  .accomodation__hoteltitle {
+    text-align: center;
+  }
+  .accomodation__details {
+    align-items: center;
+  }
+}
 .accomodation__stars__star {
   height: 30px;
   width: 30px;

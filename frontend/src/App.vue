@@ -14,14 +14,14 @@ export default {
   name: "App",
   data() {
     return {
-      theme: THEME
+      theme: THEME,
     };
   },
   mounted() {},
   components: {
     MainPage,
-    ThemeProvider
-  }
+    ThemeProvider,
+  },
 };
 </script>
 
@@ -69,5 +69,16 @@ h6 {
   background-color: #6c757d;
   border-radius: 5px;
   border: 3px solid white;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 </style>

@@ -67,6 +67,9 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
+                @media screen and (max-height: 450px) {
+                    left: 11px;
+                }
               `,
         },
         {
@@ -88,6 +91,9 @@ export const Schedule = {
                 @media screen and (max-width: 600px) {
                     left: 11px;
                 }
+                @media screen and (max-height: 450px) {
+                    left: 11px;
+                }
             `,
         },
         {
@@ -105,6 +111,9 @@ export const Schedule = {
                 background-position: center 3px;
                 background-repeat: no-repeat;
                 @media screen and (max-width: 600px) {
+                    left: 11px;
+                }
+                @media screen and (max-height: 450px) {
                     left: 11px;
                 }
             `,
@@ -126,6 +135,9 @@ export const Schedule = {
                 background-position: 0px 0px;
                 background-repeat: no-repeat;
                 @media screen and (max-width: 600px) {
+                    left: 11px;
+                }
+                @media screen and (max-height: 450px) {
                     left: 11px;
                 }
             `,
