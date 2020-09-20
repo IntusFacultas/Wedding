@@ -1,7 +1,8 @@
 <template>
   <flex-row>
     <flex-column :md="12" :col="6" class="accomodation__mapcontainer">
-      <div v-html="hotel.map"></div>
+      <div v-if="show" v-html="hotel.map"></div>
+      <div class="maploading" v-else></div>
     </flex-column>
     <flex-column :md="12" :col="6" class="accomodation__details">
       <category-title class="accomodation__hoteltitle">{{hotel.title}}</category-title>
@@ -56,6 +57,16 @@ import {
 } from "@IntusFacultas/typography";
 export const Hotel = {
   components: { CategoryTitle, Paragraph, TextContent, FlexColumn, FlexRow },
+  data() {
+    return {
+      show: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 1000);
+  },
   props: {
     hotel: Object,
   },
@@ -89,5 +100,26 @@ export default Hotel;
 .accomodation__stars__star {
   height: 30px;
   width: 30px;
+}
+.maploading {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-color: #444;
+  color: white;
+}
+.maploading::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  content: "Loading";
+  font-size: 24px;
 }
 </style>

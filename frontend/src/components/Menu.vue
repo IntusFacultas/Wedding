@@ -3,7 +3,7 @@
     <section-title id="menu" class="detailssection__title">Menu</section-title>
     <flex-row>
       <div :md="6" :sm="12" class="menusection__column">
-        <section-title class="menusection__title">Passed Hors D'Oeuvres</section-title>
+        <section-title>Passed Hors D'Oeuvres</section-title>
         <div class="menusection__item">
           <div>
             <category-title>Edamame Pot Sticker</category-title>
@@ -43,7 +43,6 @@
         </div>
       </div>
       <div :md="6" :sm="12" class="menusection__column">
-        <section-title class="menusection__title">Stations</section-title>
         <div class="menusection__station">
           <section-title>Station I - Indonesian</section-title>
           <div class="menusection__item menusection__itemsection">
@@ -74,7 +73,7 @@
             <img
               :src="`${STATIC_URL}${seafood}`"
               alt="image of indonesian rijsttafel"
-              class="menusection__item__img"
+              class="menusection__item__img firefox-fix"
             />
             <div class="menusection__item__content--block">
               <category-title>
@@ -169,11 +168,15 @@ export default Menu;
   display: flex;
   flex: 1;
   align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 50%;
 }
 .menusection__station {
   margin-top: 1em;
+}
+.menusection__station:first-of-type {
+  margin-top: 0;
 }
 .menusection__item__img {
   height: 200px;
@@ -204,6 +207,7 @@ ul.menusection__subtext li {
   width: 500px;
   align-items: center;
 }
+
 @media screen and (max-width: 1066px) {
   .menusection__column {
     width: 100%;
@@ -214,7 +218,7 @@ ul.menusection__subtext li {
 }
 @media screen and (min-width: 451px) {
   .menusection__column:nth-of-type(2) {
-    border-left: 2px solid #444;
+    border-left: 2px solid #dedede;
   }
 }
 @media screen and (max-width: 450px) {
@@ -239,5 +243,11 @@ ul.menusection__subtext li {
 }
 .menusection__station h2 {
   margin-bottom: 0.5em !important;
+}
+@-moz-document url-prefix() {
+  .firefox-fix {
+    height: 220px;
+    clip-path: circle();
+  }
 }
 </style>
